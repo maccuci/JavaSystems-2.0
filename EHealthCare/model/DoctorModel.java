@@ -14,8 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class DoctorModel {
 
     private static final Executor asyncExecutor = Executors.newSingleThreadExecutor((new ThreadFactoryBuilder()).setNameFormat("Async Thread").build());
-    private final AtomicInteger ID_GENERATOR = new AtomicInteger(1);
-    private UUID uniqueId;
+    private final UUID uniqueId;
     private String name, lastname;
     private DoctorType type;
     private static final List<DoctorModel> DOCTORS = new ArrayList<>();
