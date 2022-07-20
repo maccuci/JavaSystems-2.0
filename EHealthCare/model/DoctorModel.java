@@ -28,24 +28,25 @@ public class DoctorModel {
     }
 
     public boolean registerDoctorInList() {
-        AtomicBoolean ab = new AtomicBoolean(false);
+        AtomicBoolean register = new AtomicBoolean(false);
 
         asyncExecutor.execute(() -> {
             try {
                 DOCTORS.add(this);
-                ab.set(true);
+                register.set(true);
             } catch (Exception e) {
                 System.out.println("Impossible to execute a async register doctor.");
             }
         });
 
-        return ab.get();
+        return register.get();
     }
 
+    //TODO: btw, i don't know really if going add this
     public boolean registerDoctorInSql() {
-        AtomicBoolean ab = new AtomicBoolean();
+        AtomicBoolean register = new AtomicBoolean();
 
-        return ab.get();
+        return register.get();
     }
 
     public String showDoctorInformations() {
