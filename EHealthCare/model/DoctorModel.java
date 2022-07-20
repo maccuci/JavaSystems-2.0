@@ -14,6 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class DoctorModel {
 
     private static final Executor asyncExecutor = Executors.newSingleThreadExecutor((new ThreadFactoryBuilder()).setNameFormat("Async Thread").build());
+
     private final UUID uniqueId;
     private String name, lastname;
     private DoctorType type;
@@ -51,12 +52,12 @@ public class DoctorModel {
         StringBuilder sb = new StringBuilder();
 
         sb.append("==============[DOCTOR INFO]==============\n")
-                .append(String.format("ID: %s\nName: %s\nLast Name: %s\nType: %s\n", getId().toString(), getName(), getLastname(), getType().name()))
+                .append(String.format("UID: %s\nName: %s\nLast Name: %s\nType: %s\n", getUniqueIdId().toString(), getName(), getLastname(), getType().name()))
                 .append("==============[DOCTOR INFO]==============");;
         return sb.toString();
     }
 
-    public UUID getId() {
+    public UUID getUniqueIdId() {
         return uniqueId;
     }
 
