@@ -1,10 +1,9 @@
 package EHealthCare.model;
 
+import EHealthCare.manager.HealthPlan;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -13,29 +12,37 @@ public class PatientModel {
 
     private static final Executor asyncExecutor = Executors.newSingleThreadExecutor((new ThreadFactoryBuilder()).setNameFormat("Async Thread").build());
 
+    private int id;
     private UUID uniqueId;
-    private String name, lastname;
-    private DoctorModel doctorReference;
+    private String name, lastname, gender, email, bloodgroup;
+    private int age;
     private String appointment;
+    private HealthPlan plan;
 
     private static final List<PatientModel> PATIENTS = new ArrayList<>();
+    private static final Map<Integer, PatientModel> PATIENTS_DATA = new HashMap<>();
 
-    public PatientModel(String name, String lastname, DoctorModel doctorReference, String appointment) {
+    public PatientModel(String name, String lastname, String appointment) {
+        this.id = this.id + 1;
         this.name = name;
         this.lastname = lastname;
-        this.doctorReference = doctorReference;
         this.appointment = appointment;
     }
 
+    public PatientModel() {
+    }
+
     public boolean registerPatientInList() {
-        AtomicBoolean register = new AtomicBoolean(false);
+        AtomicBoolean register = new AtomicBoolean();
 
         asyncExecutor.execute(() -> {
             try {
                 PATIENTS.add(this);
+                PATIENTS_DATA.put(getId(), this);
                 register.set(true);
             } catch (Exception e) {
                 System.out.println("Impossible to execute a async register patient.");
+                register.set(false);
             }
         });
 
@@ -47,6 +54,10 @@ public class PatientModel {
         AtomicBoolean register = new AtomicBoolean(false);
 
         return register.get();
+    }
+
+    public int getId() {
+        return id;
     }
 
     public UUID getUniqueId() {
@@ -61,15 +72,41 @@ public class PatientModel {
         return lastname;
     }
 
-    public DoctorModel getDoctorReference() {
-        return doctorReference;
-    }
 
     public String getAppointment() {
         return appointment;
     }
 
+    public HealthPlan getPlan() {
+        return plan;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getBloodgroup() {
+        return bloodgroup;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+
+    public void setPlan(HealthPlan plan) {
+        this.plan = plan;
+    }
+
     public static List<PatientModel> getPatients() {
         return PATIENTS;
+    }
+
+    public static Map<Integer, PatientModel> getPatientsData() {
+        return PATIENTS_DATA;
     }
 }
