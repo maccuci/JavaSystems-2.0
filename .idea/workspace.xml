@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c91fec3c-91a3-45eb-beb8-f40a14f81bab" name="Changes" comment="modify PatientModel and add HealthPlan">
-      <change afterPath="$PROJECT_DIR$/projects_list" afterDir="false" />
+    <list default="true" id="c91fec3c-91a3-45eb-beb8-f40a14f81bab" name="Changes" comment="update files">
+      <change afterPath="$PROJECT_DIR$/Departments/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Departments/model/DepartmentModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Departments/model/IDepartment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,10 +19,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -34,19 +38,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "18",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="Application.Departments.Main">
+    <configuration name="Departments.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Departments.Main" />
+      <module name="JavaSystems-2.0" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Departments.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="EHealthCare.Main" />
       <module name="JavaSystems-2.0" />
@@ -62,6 +82,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Departments.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -76,7 +97,7 @@
       <updated>1658341647888</updated>
       <workItem from="1658341651096" duration="4808000" />
       <workItem from="1658365453540" duration="2752000" />
-      <workItem from="1658643760616" duration="730000" />
+      <workItem from="1658643760616" duration="3159000" />
     </task>
     <task id="LOCAL-00001" summary="maven setup">
       <created>1658341714870</created>
@@ -134,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658368069078</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update files">
+      <created>1658644635479</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1658644635479</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +187,7 @@
     <MESSAGE value="modify PatientModel" />
     <MESSAGE value="modify DoctorModel" />
     <MESSAGE value="modify PatientModel and add HealthPlan" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify PatientModel and add HealthPlan" />
+    <MESSAGE value="update files" />
+    <option name="LAST_COMMIT_MESSAGE" value="update files" />
   </component>
 </project>
