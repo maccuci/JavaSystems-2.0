@@ -6,7 +6,6 @@ import OnlineBank.account.CustomerAccount;
 import OnlineBank.backend.queries.CoreQueries;
 import OnlineBank.backend.sql.SqlDatabase;
 
-import java.util.Date;
 import java.util.UUID;
 
 public class Main {
@@ -16,13 +15,17 @@ public class Main {
     public static void main(String[] args) {
         try {
             database.connect();
-            CustomerAccount account = new CustomerAccount("Testing");
-            account.createAndLoadCustomerAccount();
             System.out.println("The connection of mysql was created!");
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Impossible to create the connection of mysql.");
         }
+
+        CustomerAccount account = new CustomerAccount("Testing");
+        account.createAndLoadCustomerAccount();
+
+        Bank bank = new Bank("Ttrier", UUID.randomUUID(), CardBrandType.MASTERCARD);
+        bank.createAndLoadBank();
     }
 
     public static SqlDatabase getSqlDatabase() {

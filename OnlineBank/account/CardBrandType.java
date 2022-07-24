@@ -5,7 +5,7 @@ public enum CardBrandType {
     AMEX("Amex"),
     MASTERCARD("MasterCard"),
     VISA("Visa"),
-    ALL(""),
+    ALL("MasterCard Visa Amex"),
     UNKNOWN("Unknown");
 
     private final String name;

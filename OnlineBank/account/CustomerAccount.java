@@ -3,13 +3,19 @@ package OnlineBank.account;
 import OnlineBank.Main;
 import OnlineBank.account.nullable.VoidBank;
 import OnlineBank.backend.queries.CoreQueries;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.*;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class CustomerAccount {
+
+    private static final Executor saveAsyncExecutor = Executors
+            .newSingleThreadExecutor((new ThreadFactoryBuilder()).setNameFormat("Save Async Thread").build());
 
     private int id;
     private String name;
@@ -28,7 +34,7 @@ public class CustomerAccount {
     public void createAndLoadCustomerAccount() {
         try {
             Connection connection = Main.getSqlDatabase().getConnection();
-            PreparedStatement accountQuery = connection.prepareStatement(CoreQueries.ACCOUNT_QUERY.toString());
+            PreparedStatement accountQuery = connection.prepareStatement(CoreQueries.CUSTOMER_QUERY.toString());
 
             accountQuery.setString(1, getUniqueId().toString());
             ResultSet accountData = accountQuery.executeQuery();
@@ -49,7 +55,7 @@ public class CustomerAccount {
                 this.cardHolder = "";
                 this.cardCVC = 0;
 
-                PreparedStatement accountInsert = connection.prepareStatement(CoreQueries.ACCOUNT_INSERT.toString());
+                PreparedStatement accountInsert = connection.prepareStatement(CoreQueries.CUSTOMER_INSERT.toString());
 
                 accountInsert.setString(1, uniqueId.toString());
                 accountInsert.setString(2, name);
@@ -62,7 +68,7 @@ public class CustomerAccount {
                 accountInsert.execute();
                 accountInsert.close();
 
-                PreparedStatement idQuery = Main.getSqlDatabase().getConnection().prepareStatement(CoreQueries.ACCOUNT_QUERY.toString());
+                PreparedStatement idQuery = Main.getSqlDatabase().getConnection().prepareStatement(CoreQueries.CUSTOMER_QUERY.toString());
                 idQuery.setString(1, uniqueId.toString());
                 ResultSet idData = accountQuery.executeQuery();
 
@@ -76,6 +82,28 @@ public class CustomerAccount {
             e.printStackTrace();
             System.out.printf("Error when the OnlineBank tried to load the data of customer with the uuid: %s", uniqueId.toString());
         }
+    }
+
+    public void update() {
+        saveAsyncExecutor.execute(() -> {
+            try {
+                Connection connection = Main.getSqlDatabase().getConnection();
+                PreparedStatement statement = connection.prepareStatement(CoreQueries.CUSTOMER_UPDATE.toString());
+
+                statement.setString(1, name);
+                statement.setString(2, bank);
+                statement.setString(3, brandType.getName());
+                statement.setString(4, cardNumber);
+                statement.setString(5, cardExpires);
+                statement.setString(6, cardHolder);
+                statement.setInt(7, cardCVC);
+                statement.setInt(8, id);
+                statement.execute();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     public int getId() {

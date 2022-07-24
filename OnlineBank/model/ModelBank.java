@@ -12,9 +12,7 @@ public class ModelBank {
     private String name;
     private UUID uniqueId;
 
-    private Set<CustomerAccount> customers;
-
-    private Set<ModelCard> cards;
+    private int customers, cards;
     private CardBrandType brand;
 
     public ModelBank(Bank account) {
@@ -33,11 +31,11 @@ public class ModelBank {
         return uniqueId;
     }
 
-    public Set<CustomerAccount> getCustomers() {
+    public int getCustomers() {
         return customers;
     }
 
-    public Set<ModelCard> getCards() {
+    public int getCards() {
         return cards;
     }
 

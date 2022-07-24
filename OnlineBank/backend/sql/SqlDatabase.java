@@ -33,7 +33,9 @@ public class SqlDatabase implements Database {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
         connection = DriverManager.getConnection(String.format("jdbc:mysql://%s:%d/%s", hostname, port, database), username, password);
-        executeUpdate(CoreQueries.TABLE_ACCOUNTS.toString());
+        executeUpdate(CoreQueries.TABLE_CUSTOMERS.toString());
+        executeUpdate(CoreQueries.TABLE_BANKS.toString());
+        executeUpdate(CoreQueries.TABLE_CARDS.toString());
 
         connection.createStatement().executeUpdate("CREATE SCHEMA IF NOT EXISTS `" + database + "` DEFAULT CHARACTER SET utf8 ;");
     }
