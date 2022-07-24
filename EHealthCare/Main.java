@@ -1,8 +1,7 @@
 package EHealthCare;
 
 import EHealthCare.manager.HealthPlan;
-import EHealthCare.model.DoctorModel;
-import EHealthCare.model.PatientModel;
+import EHealthCare.model.ModelPatient;
 
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -47,7 +46,7 @@ public class Main {
                                 System.out.println("Name: "); name = scanner.next();
                                 System.out.println("Last Name: "); lastname = scanner.next();
                                 System.out.println("Appointment: "); appointment = scanner.next();
-                                PatientModel patient = new PatientModel(name, lastname, appointment);
+                                ModelPatient patient = new ModelPatient(name, lastname, appointment);
                                 patient.setPlan(new HealthPlan(patient, null, HealthPlan.HealthPlanType.FREE, 0));
                                 if(!patient.registerPatientInList()) {
                                     System.out.println("The patient was added!");
@@ -56,7 +55,7 @@ public class Main {
                                 break;
                             case 3:
 
-                                PatientModel.getPatients().forEach(p -> {
+                                ModelPatient.getPatients().forEach(p -> {
                                             System.out.println(String.format("Name: %s\nLast Name: %s\nAppointment: %s\nHealth Plan: %s",
                                             p.getName(), p.getLastname(), p.getAppointment(), p.getPlan().getType()));
                                 });
@@ -80,7 +79,7 @@ public class Main {
                 System.out.print("ID: ");id=scanner.nextInt();
                 System.out.print("Password: ");ps=scanner.next();
                 try {
-                    PatientModel.getPatients().forEach(patient -> {
+                    ModelPatient.getPatients().forEach(patient -> {
                         if(patient.getId() == id && ps.compareTo("123") == 0) {
                             flag.set(true);
                         }
@@ -89,7 +88,7 @@ public class Main {
                     e.printStackTrace();
                 }
                 if(flag.get()) {
-                    PatientModel patient = PatientModel.getPatientsData().get(id);
+                    ModelPatient patient = ModelPatient.getPatientsData().get(id);
                     if(patient != null) {
                         System.out.println("\n************************************");
                         System.out.println("\n************************************\n");

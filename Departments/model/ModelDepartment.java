@@ -3,17 +3,17 @@ package Departments.model;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class DepartmentModel implements IDepartment {
+public class ModelDepartment implements IDepartment {
 
-    private static final Map<String, DepartmentModel> DEPARTMENTS = new HashMap<>();
+    private static final Map<String, ModelDepartment> DEPARTMENTS = new HashMap<>();
 
     private String name;
 
-    public DepartmentModel(String name) {
+    public ModelDepartment(String name) {
         this.name = name;
     }
 
-    public DepartmentModel() {}
+    public ModelDepartment() {}
 
     public String getName() {
         return name;
@@ -37,9 +37,9 @@ public class DepartmentModel implements IDepartment {
         DEPARTMENTS.remove(getName());
     }
 
-    public static DepartmentModel getDepartment(String departmentID) {
-        Collection<DepartmentModel> departmentCollection = getDepartmentsList();
-        AtomicReference<DepartmentModel> departmentModel = new AtomicReference<>();
+    public static ModelDepartment getDepartment(String departmentID) {
+        Collection<ModelDepartment> departmentCollection = getDepartmentsList();
+        AtomicReference<ModelDepartment> departmentModel = new AtomicReference<>();
         departmentCollection.forEach(d -> {
             if(d.getName().equals(departmentID)) {
                 departmentModel.set(d);
@@ -48,13 +48,13 @@ public class DepartmentModel implements IDepartment {
         return departmentModel.get();
     }
 
-     public static List<DepartmentModel> getDepartmentsList() {
-         Collection<DepartmentModel> departmentCollection = getDepartments().values();
+     public static List<ModelDepartment> getDepartmentsList() {
+         Collection<ModelDepartment> departmentCollection = getDepartments().values();
 
          return departmentCollection.stream().toList();
      }
 
-    public static Map<String, DepartmentModel> getDepartments() {
+    public static Map<String, ModelDepartment> getDepartments() {
         return DEPARTMENTS;
     }
 }

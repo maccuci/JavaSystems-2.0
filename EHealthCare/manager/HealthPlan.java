@@ -1,27 +1,27 @@
 package EHealthCare.manager;
 
-import EHealthCare.model.DoctorModel;
-import EHealthCare.model.PatientModel;
+import EHealthCare.model.ModelDoctor;
+import EHealthCare.model.ModelPatient;
 
 public class HealthPlan {
 
-    private PatientModel patient;
-    private DoctorModel doctor;
+    private ModelPatient patient;
+    private ModelDoctor doctor;
     private HealthPlanType type;
     private int fees;
 
-    public HealthPlan(PatientModel patient, DoctorModel doctor, HealthPlanType type, int fees) {
+    public HealthPlan(ModelPatient patient, ModelDoctor doctor, HealthPlanType type, int fees) {
         this.patient = patient;
         this.doctor = doctor;
         this.type = type;
         this.fees = fees;
     }
 
-    public PatientModel getPatient() {
+    public ModelPatient getPatient() {
         return patient;
     }
 
-    public DoctorModel getDoctor() {
+    public ModelDoctor getDoctor() {
         return doctor;
     }
 
@@ -33,7 +33,7 @@ public class HealthPlan {
         return fees;
     }
 
-    public void setDoctor(DoctorModel doctor) {
+    public void setDoctor(ModelDoctor doctor) {
         this.doctor = doctor;
     }
 

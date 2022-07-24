@@ -5,7 +5,7 @@ public interface IDepartment {
     boolean registerDepartment();
     void closeDepartment();
 
-    static DepartmentModel getDepartment(String department) {
+    static ModelDepartment getDepartment(String department) {
         return null;
     }
 }

@@ -1,22 +1,22 @@
 package Departments.list;
 
-import Departments.model.DepartmentModel;
+import Departments.model.ModelDepartment;
 
 public class Example {
 
     private final String name;
-    private final DepartmentModel[] departments;
+    private final ModelDepartment[] departments;
     private int iDepartments;
 
     public Example(String name) {
         this.name = name;
-        this.departments = new DepartmentModel[15];
+        this.departments = new ModelDepartment[15];
         this.iDepartments = 0;
     }
 
     public void createDepartment() {
         if(iDepartments <= 15) {
-            departments[iDepartments] = new DepartmentModel(getName());
+            departments[iDepartments] = new ModelDepartment(getName());
             departments[iDepartments].registerDepartment();
 
             System.out.printf("The new %s department was created!", getName());

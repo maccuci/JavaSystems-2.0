@@ -8,7 +8,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class PatientModel {
+public class ModelPatient {
 
     private static final Executor asyncExecutor = Executors.newSingleThreadExecutor((new ThreadFactoryBuilder()).setNameFormat("Async Thread").build());
 
@@ -19,17 +19,17 @@ public class PatientModel {
     private String appointment;
     private HealthPlan plan;
 
-    private static final List<PatientModel> PATIENTS = new ArrayList<>();
-    private static final Map<Integer, PatientModel> PATIENTS_DATA = new HashMap<>();
+    private static final List<ModelPatient> PATIENTS = new ArrayList<>();
+    private static final Map<Integer, ModelPatient> PATIENTS_DATA = new HashMap<>();
 
-    public PatientModel(String name, String lastname, String appointment) {
+    public ModelPatient(String name, String lastname, String appointment) {
         this.id = this.id + 1;
         this.name = name;
         this.lastname = lastname;
         this.appointment = appointment;
     }
 
-    public PatientModel() {
+    public ModelPatient() {
     }
 
     public boolean registerPatientInList() {
@@ -102,11 +102,11 @@ public class PatientModel {
         this.plan = plan;
     }
 
-    public static List<PatientModel> getPatients() {
+    public static List<ModelPatient> getPatients() {
         return PATIENTS;
     }
 
-    public static Map<Integer, PatientModel> getPatientsData() {
+    public static Map<Integer, ModelPatient> getPatientsData() {
         return PATIENTS_DATA;
     }
 }

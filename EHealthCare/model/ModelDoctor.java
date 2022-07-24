@@ -4,23 +4,21 @@ import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import java.util.UUID;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
 
-public class DoctorModel {
+public class ModelDoctor {
 
     private static final Executor asyncExecutor = Executors.newSingleThreadExecutor((new ThreadFactoryBuilder()).setNameFormat("Async Thread").build());
 
     private final UUID uniqueId;
     private String name, lastname;
     private DoctorType type;
-    private static final List<DoctorModel> DOCTORS = new ArrayList<>();
+    private static final List<ModelDoctor> DOCTORS = new ArrayList<>();
 
-    public DoctorModel(String name, String lastname, DoctorType type) {
+    public ModelDoctor(String name, String lastname, DoctorType type) {
         this.uniqueId = UUID.randomUUID();
         this.name = name;
         this.lastname = lastname;
@@ -74,7 +72,7 @@ public class DoctorModel {
         return type;
     }
 
-    public static List<DoctorModel> getDoctors() {
+    public static List<ModelDoctor> getDoctors() {
         return DOCTORS;
     }
 
