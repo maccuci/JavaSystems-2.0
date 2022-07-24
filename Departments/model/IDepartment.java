@@ -2,7 +2,7 @@ package Departments.model;
 
 public interface IDepartment {
 
-    boolean registerDepartment(String departmentID);
+    boolean registerDepartment();
     void closeDepartment();
 
     static DepartmentModel getDepartment(String department) {

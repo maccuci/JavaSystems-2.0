@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c91fec3c-91a3-45eb-beb8-f40a14f81bab" name="Changes" comment="update files">
-      <change afterPath="$PROJECT_DIR$/Departments/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Departments/model/DepartmentModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Departments/model/IDepartment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c91fec3c-91a3-45eb-beb8-f40a14f81bab" name="Changes" comment="added Departments project">
+      <change afterPath="$PROJECT_DIR$/Departments/list/Example.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +15,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -97,7 +94,7 @@
       <updated>1658341647888</updated>
       <workItem from="1658341651096" duration="4808000" />
       <workItem from="1658365453540" duration="2752000" />
-      <workItem from="1658643760616" duration="3159000" />
+      <workItem from="1658643760616" duration="3459000" />
     </task>
     <task id="LOCAL-00001" summary="maven setup">
       <created>1658341714870</created>
@@ -162,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658644635479</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added Departments project">
+      <created>1658647044855</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1658647044855</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +192,7 @@
     <MESSAGE value="modify DoctorModel" />
     <MESSAGE value="modify PatientModel and add HealthPlan" />
     <MESSAGE value="update files" />
-    <option name="LAST_COMMIT_MESSAGE" value="update files" />
+    <MESSAGE value="added Departments project" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Departments project" />
   </component>
 </project>

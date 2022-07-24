@@ -1,14 +1,12 @@
 package Departments;
 
-import Departments.model.DepartmentModel;
+import Departments.list.Example;
 
 public class Main {
 
     public static void main(String[] args) {
-        DepartmentModel department = new DepartmentModel("Sample");
-        department.registerDepartment("DS");
+        Example example = new Example("Example");
 
-        department.setName("None");
-        department.closeDepartment();
+        example.createDepartment();
     }
 }

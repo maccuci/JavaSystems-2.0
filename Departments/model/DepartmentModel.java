@@ -24,8 +24,8 @@ public class DepartmentModel implements IDepartment {
     }
 
     @Override
-    public boolean registerDepartment(String departmentID) {
-        DEPARTMENTS.put(departmentID, this);
+    public boolean registerDepartment() {
+        DEPARTMENTS.put(getName(), this);
         System.out.printf("The new department %s was added%n", getName());
         return true;
     }
