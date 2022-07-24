@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c91fec3c-91a3-45eb-beb8-f40a14f81bab" name="Changes" comment="modify DoctorModel">
-      <change afterPath="$PROJECT_DIR$/EHealthCare/manager/HealthPlan.java" afterDir="false" />
+    <list default="true" id="c91fec3c-91a3-45eb-beb8-f40a14f81bab" name="Changes" comment="modify PatientModel and add HealthPlan">
+      <change afterPath="$PROJECT_DIR$/projects_list" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHealthCare/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHealthCare/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EHealthCare/model/PatientModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/EHealthCare/model/PatientModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +75,8 @@
       <option name="presentableId" value="Default" />
       <updated>1658341647888</updated>
       <workItem from="1658341651096" duration="4808000" />
-      <workItem from="1658365453540" duration="2563000" />
+      <workItem from="1658365453540" duration="2752000" />
+      <workItem from="1658643760616" duration="730000" />
     </task>
     <task id="LOCAL-00001" summary="maven setup">
       <created>1658341714870</created>
@@ -128,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658346312201</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="modify PatientModel and add HealthPlan">
+      <created>1658368069078</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1658368069078</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +158,7 @@
     <MESSAGE value="added payment interface and scanner choice" />
     <MESSAGE value="modify PatientModel" />
     <MESSAGE value="modify DoctorModel" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify DoctorModel" />
+    <MESSAGE value="modify PatientModel and add HealthPlan" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify PatientModel and add HealthPlan" />
   </component>
 </project>
