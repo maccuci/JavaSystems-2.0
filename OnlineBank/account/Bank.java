@@ -1,13 +1,12 @@
-package OnlineBank.model;
+package OnlineBank.account;
 
-import OnlineBank.account.Bank;
-import OnlineBank.account.CardBrandType;
-import OnlineBank.account.CustomerAccount;
+import OnlineBank.model.ModelBank;
+import OnlineBank.model.ModelCard;
 
 import java.util.Set;
 import java.util.UUID;
 
-public class ModelBank {
+public class Bank {
 
     private String name;
     private UUID uniqueId;
@@ -17,12 +16,22 @@ public class ModelBank {
     private Set<ModelCard> cards;
     private CardBrandType brand;
 
-    public ModelBank(Bank account) {
+    public Bank(ModelBank account) {
         this.name = account.getName();
         this.uniqueId = account.getUniqueId();
         this.customers = account.getCustomers();
         this.cards = account.getCards();
         this.brand = account.getBrand();
+    }
+
+    public Bank(String name, UUID uniqueId, CardBrandType brand) {
+        this.name = name;
+        this.uniqueId = uniqueId;
+        this.brand = brand;
+    }
+
+    public void createBank() {
+
     }
 
     public String getName() {
@@ -44,5 +53,4 @@ public class ModelBank {
     public CardBrandType getBrand() {
         return brand;
     }
-
 }
