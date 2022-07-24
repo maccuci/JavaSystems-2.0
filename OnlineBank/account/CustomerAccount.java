@@ -15,7 +15,7 @@ public class CustomerAccount {
     private String name;
     private UUID uniqueId;
 
-    private Set<String> banks = new HashSet<>();
+    private String bank;
     private CardBrandType brandType;
     private String cardNumber, cardExpires, cardHolder;
     private int cardCVC;
@@ -35,25 +35,25 @@ public class CustomerAccount {
 
             if(accountData.next()) {
                 setName(accountData.getString(2));
-                setBanks(accountData.getString(3));
+                setBank(accountData.getString(3));
                 setBrandType(CardBrandType.valueOf(accountData.getString(4)));
                 setCardNumber(accountData.getString(5));
                 setCardExpires(accountData.getString(6));
                 setCardHolder(accountData.getString(7));
                 setCardCVC(accountData.getInt(8));
             } else {
+                this.bank = "";
                 this.brandType = CardBrandType.UNKNOWN;
                 this.cardNumber = "";
                 this.cardExpires = "";
                 this.cardHolder = "";
                 this.cardCVC = 0;
-                Set<String> banks = new HashSet<>();
 
                 PreparedStatement accountInsert = connection.prepareStatement(CoreQueries.ACCOUNT_INSERT.toString());
 
                 accountInsert.setString(1, uniqueId.toString());
                 accountInsert.setString(2, name);
-                accountInsert.setString(3, List.of(banks).toString());
+                accountInsert.setString(3, bank);
                 accountInsert.setString(4, brandType.getName());
                 accountInsert.setString(5, cardNumber);
                 accountInsert.setString(6, cardExpires);
@@ -98,12 +98,12 @@ public class CustomerAccount {
         this.uniqueId = uniqueId;
     }
 
-    public Set<String> getBanks() {
-        return banks;
+    public String getBank() {
+        return bank;
     }
 
-    public void setBanks(String bank) {
-        this.banks.add(bank);
+    public void setBank(String bank) {
+        this.bank = bank;
     }
 
     public CardBrandType getBrandType() {
