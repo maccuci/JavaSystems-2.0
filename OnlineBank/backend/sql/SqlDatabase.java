@@ -102,6 +102,6 @@ public class SqlDatabase implements Database {
 
     @Override
     public boolean isConnected() throws Exception {
-        return false;
+        return connection != null && !connection.isClosed();
     }
 }
