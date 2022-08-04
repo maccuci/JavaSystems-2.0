@@ -33,11 +33,23 @@ public class SqlDatabase implements Database {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
         connection = DriverManager.getConnection(String.format("jdbc:mysql://%s:%d/%s", hostname, port, database), username, password);
-        executeUpdate(CoreQueries.TABLE_CUSTOMERS.toString());
-        executeUpdate(CoreQueries.TABLE_BANKS.toString());
-        executeUpdate(CoreQueries.TABLE_CARDS.toString());
+        loadTables();
 
         connection.createStatement().executeUpdate("CREATE SCHEMA IF NOT EXISTS `" + database + "` DEFAULT CHARACTER SET utf8 ;");
+    }
+
+    boolean loadTables() {
+        AtomicBoolean finish = new AtomicBoolean(false);
+
+        try {
+            for(CoreQueries queries : CoreQueries.values()) {
+                executeUpdate(queries.toString());
+            }
+            finish.set(true);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return finish.get();
     }
 
     public ResultSet executeQuery(String query) {
@@ -67,20 +79,21 @@ public class SqlDatabase implements Database {
     }
 
     public boolean executeUpdate(String update) {
+        AtomicBoolean callback = new AtomicBoolean(false);
         try {
             PreparedStatement statement = getConnection().prepareStatement(update);
             statement.execute();
             statement.close();
-            return true;
+            callback.set(true);
         } catch (Exception e) {
             System.out.println("Impossible to execute a sync mysql update (" + update + ").");
         }
-        return false;
+        return callback.get();
     }
 
     @Override
     public void disconnect() throws Exception {
-
+        getConnection().close();
     }
 
     public Connection getConnection() {

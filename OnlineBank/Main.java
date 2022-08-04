@@ -24,7 +24,7 @@ public class Main {
         CustomerAccount account = new CustomerAccount("Testing");
         account.createAndLoadCustomerAccount();
 
-        Bank bank = new Bank("Ttrier", UUID.randomUUID(), CardBrandType.MASTERCARD);
+        Bank bank = new Bank("Lasvoit", UUID.randomUUID(), CardBrandType.ALL);
         bank.createAndLoadBank();
     }
 

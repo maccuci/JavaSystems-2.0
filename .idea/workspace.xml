@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c91fec3c-91a3-45eb-beb8-f40a14f81bab" name="Changes" comment="modify files">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineBank/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineBank/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineBank/account/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineBank/account/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineBank/account/CardBrandType.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineBank/account/CardBrandType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineBank/account/CustomerAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineBank/account/CustomerAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineBank/backend/queries/CoreQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineBank/backend/queries/CoreQueries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineBank/backend/sql/SqlDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineBank/backend/sql/SqlDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineBank/model/ModelBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineBank/model/ModelBank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineBank/model/ModelCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineBank/model/ModelCard.java" afterDir="false" />
-    </list>
+    <list default="true" id="c91fec3c-91a3-45eb-beb8-f40a14f81bab" name="Changes" comment="modify files of OnlineBank project" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +110,7 @@
       <workItem from="1658341651096" duration="4808000" />
       <workItem from="1658365453540" duration="2752000" />
       <workItem from="1658643760616" duration="3771000" />
-      <workItem from="1658650882226" duration="8655000" />
+      <workItem from="1658650882226" duration="9471000" />
     </task>
     <task id="LOCAL-00001" summary="maven setup">
       <created>1658341714870</created>
@@ -220,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658657614161</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="modify files of OnlineBank project">
+      <created>1658659857277</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1658659857277</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +248,8 @@
     <MESSAGE value="editing name files" />
     <MESSAGE value="Starting OnlineBank project" />
     <MESSAGE value="modify files" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify files" />
+    <MESSAGE value="modify files of OnlineBank project" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify files of OnlineBank project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

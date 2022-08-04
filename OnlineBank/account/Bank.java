@@ -3,12 +3,10 @@ package OnlineBank.account;
 import OnlineBank.Main;
 import OnlineBank.backend.queries.CoreQueries;
 import OnlineBank.model.ModelBank;
-import OnlineBank.model.ModelCard;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.Set;
 import java.util.UUID;
 
 public class Bank {
