@@ -3,14 +3,14 @@ package OnlineBank;
 import OnlineBank.account.Bank;
 import OnlineBank.account.CardBrandType;
 import OnlineBank.account.CustomerAccount;
-import OnlineBank.backend.queries.CoreQueries;
+import OnlineBank.backend.queries.BankSqlQueries;
 import OnlineBank.backend.sql.SqlDatabase;
 
 import java.util.UUID;
 
 public class Main {
 
-   private static final SqlDatabase database = new SqlDatabase("localhost", CoreQueries.DATABASE.toString(), "root", "", 3306);
+   private static final SqlDatabase database = new SqlDatabase("localhost", BankSqlQueries.DATABASE.toString(), "root", "", 3306);
 
     public static void main(String[] args) {
         try {

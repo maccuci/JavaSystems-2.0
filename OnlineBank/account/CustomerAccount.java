@@ -1,8 +1,7 @@
 package OnlineBank.account;
 
 import OnlineBank.Main;
-import OnlineBank.account.nullable.VoidBank;
-import OnlineBank.backend.queries.CoreQueries;
+import OnlineBank.backend.queries.BankSqlQueries;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
 import java.sql.Connection;
@@ -34,7 +33,7 @@ public class CustomerAccount {
     public void createAndLoadCustomerAccount() {
         try {
             Connection connection = Main.getSqlDatabase().getConnection();
-            PreparedStatement accountQuery = connection.prepareStatement(CoreQueries.CUSTOMER_QUERY.toString());
+            PreparedStatement accountQuery = connection.prepareStatement(BankSqlQueries.CUSTOMER_QUERY.toString());
 
             accountQuery.setString(1, getUniqueId().toString());
             ResultSet accountData = accountQuery.executeQuery();
@@ -55,7 +54,7 @@ public class CustomerAccount {
                 this.cardHolder = "";
                 this.cardCVC = 0;
 
-                PreparedStatement accountInsert = connection.prepareStatement(CoreQueries.CUSTOMER_INSERT.toString());
+                PreparedStatement accountInsert = connection.prepareStatement(BankSqlQueries.CUSTOMER_INSERT.toString());
 
                 accountInsert.setString(1, uniqueId.toString());
                 accountInsert.setString(2, name);
@@ -68,7 +67,7 @@ public class CustomerAccount {
                 accountInsert.execute();
                 accountInsert.close();
 
-                PreparedStatement idQuery = Main.getSqlDatabase().getConnection().prepareStatement(CoreQueries.CUSTOMER_QUERY.toString());
+                PreparedStatement idQuery = Main.getSqlDatabase().getConnection().prepareStatement(BankSqlQueries.CUSTOMER_QUERY.toString());
                 idQuery.setString(1, uniqueId.toString());
                 ResultSet idData = accountQuery.executeQuery();
 
@@ -88,7 +87,7 @@ public class CustomerAccount {
         saveAsyncExecutor.execute(() -> {
             try {
                 Connection connection = Main.getSqlDatabase().getConnection();
-                PreparedStatement statement = connection.prepareStatement(CoreQueries.CUSTOMER_UPDATE.toString());
+                PreparedStatement statement = connection.prepareStatement(BankSqlQueries.CUSTOMER_UPDATE.toString());
 
                 statement.setString(1, name);
                 statement.setString(2, bank);

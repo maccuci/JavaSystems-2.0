@@ -1,7 +1,7 @@
 package OnlineBank.account;
 
 import OnlineBank.Main;
-import OnlineBank.backend.queries.CoreQueries;
+import OnlineBank.backend.queries.BankSqlQueries;
 import OnlineBank.model.ModelBank;
 
 import java.sql.Connection;
@@ -37,7 +37,7 @@ public class Bank {
     public void createAndLoadBank() {
         try {
             Connection connection = Main.getSqlDatabase().getConnection();
-            PreparedStatement bankQuery = connection.prepareStatement(CoreQueries.BANK_QUERY.toString());
+            PreparedStatement bankQuery = connection.prepareStatement(BankSqlQueries.BANK_QUERY.toString());
 
             bankQuery.setString(1, getName());
             ResultSet bankData = bankQuery.executeQuery();
@@ -51,7 +51,7 @@ public class Bank {
                 this.cards = 0;
                 this.customers = 0;
 
-                PreparedStatement bankInsert = connection.prepareStatement(CoreQueries.BANK_INSERT.toString());
+                PreparedStatement bankInsert = connection.prepareStatement(BankSqlQueries.BANK_INSERT.toString());
 
                 bankInsert.setString(1, uniqueId.toString());
                 bankInsert.setString(2, name);
@@ -61,7 +61,7 @@ public class Bank {
                 bankInsert.execute();
                 bankInsert.close();
 
-                PreparedStatement idQuery = Main.getSqlDatabase().getConnection().prepareStatement(CoreQueries.CUSTOMER_QUERY.toString());
+                PreparedStatement idQuery = Main.getSqlDatabase().getConnection().prepareStatement(BankSqlQueries.CUSTOMER_QUERY.toString());
                 idQuery.setString(1, uniqueId.toString());
                 ResultSet idData = bankQuery.executeQuery();
 
@@ -117,7 +117,7 @@ public class Bank {
         Bank bank;
         try {
             Connection connection = Main.getSqlDatabase().getConnection();
-            PreparedStatement bankQuery = connection.prepareStatement(CoreQueries.BANK_QUERY.toString());
+            PreparedStatement bankQuery = connection.prepareStatement(BankSqlQueries.BANK_QUERY.toString());
 
             bankQuery.setString(1, name);
             ResultSet bankData = bankQuery.executeQuery();

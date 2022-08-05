@@ -1,6 +1,6 @@
 package OnlineBank.backend.queries;
 
-public enum CoreQueries {
+public enum BankSqlQueries {
 
     DATABASE("online_bank"),
 
@@ -26,7 +26,7 @@ public enum CoreQueries {
 
     private final String query;
 
-    private CoreQueries(String query) {
+    private BankSqlQueries(String query) {
         this.query = query;
     }
 

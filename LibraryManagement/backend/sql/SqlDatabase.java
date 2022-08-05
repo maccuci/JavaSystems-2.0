@@ -1,6 +1,7 @@
-package OnlineBank.backend.sql;
+package LibraryManagement.backend.sql;
 
-import OnlineBank.backend.Database;
+import LibraryManagement.backend.Database;
+import LibraryManagement.backend.queries.LibrarySqlQueries;
 import OnlineBank.backend.queries.BankSqlQueries;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
@@ -33,7 +34,10 @@ public class SqlDatabase implements Database {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
         connection = DriverManager.getConnection(String.format("jdbc:mysql://%s:%d/%s", hostname, port, database), username, password);
-        loadTables();
+        if (loadTables())
+            System.out.println("Trying to create tables.");
+        else
+            System.out.println("Error when create all tables.");
 
         connection.createStatement().executeUpdate("CREATE SCHEMA IF NOT EXISTS `" + database + "` DEFAULT CHARACTER SET utf8 ;");
     }
@@ -42,7 +46,7 @@ public class SqlDatabase implements Database {
         AtomicBoolean finish = new AtomicBoolean(false);
 
         try {
-            for(BankSqlQueries queries : BankSqlQueries.values()) {
+            for(LibrarySqlQueries queries : LibrarySqlQueries.values()) {
                 executeUpdate(queries.toString());
             }
             finish.set(true);
@@ -93,16 +97,15 @@ public class SqlDatabase implements Database {
 
     @Override
     public void disconnect() throws Exception {
-        if(isConnected())
-            getConnection().close();
-    }
 
-    public Connection getConnection() {
-        return connection;
     }
 
     @Override
     public boolean isConnected() throws Exception {
-        return connection != null && !connection.isClosed();
+        return false;
+    }
+
+    public Connection getConnection() {
+        return connection;
     }
 }
