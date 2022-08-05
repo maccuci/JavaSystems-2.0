@@ -4,13 +4,13 @@ import OnlineBank.account.Bank;
 import OnlineBank.account.CardBrandType;
 import OnlineBank.account.CustomerAccount;
 import OnlineBank.backend.queries.BankSqlQueries;
-import OnlineBank.backend.sql.SqlDatabase;
+import OnlineBank.backend.sql.BankSqlDatabase;
 
 import java.util.UUID;
 
 public class Main {
 
-   private static final SqlDatabase database = new SqlDatabase("localhost", BankSqlQueries.DATABASE.toString(), "root", "", 3306);
+   private static final BankSqlDatabase database = new BankSqlDatabase("localhost", BankSqlQueries.DATABASE.toString(), "root", "", 3306);
 
     public static void main(String[] args) {
         try {
@@ -28,7 +28,7 @@ public class Main {
         bank.createAndLoadBank();
     }
 
-    public static SqlDatabase getSqlDatabase() {
+    public static BankSqlDatabase getSqlDatabase() {
         return database;
     }
 }

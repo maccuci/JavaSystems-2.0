@@ -1,7 +1,7 @@
-package OnlineBank.backend.sql;
+package LibraryManagement.backend.sql;
 
-import OnlineBank.backend.Database;
-import OnlineBank.backend.queries.BankSqlQueries;
+import LibraryManagement.backend.Database;
+import LibraryManagement.backend.queries.LibrarySqlQueries;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
 import java.sql.Connection;
@@ -12,7 +12,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class SqlDatabase implements Database {
+public class LibrarySqlDatabase implements Database {
 
     private static final Executor asyncExecutor = Executors.newSingleThreadExecutor((new ThreadFactoryBuilder()).setNameFormat("Async Thread").build());
 
@@ -20,7 +20,7 @@ public class SqlDatabase implements Database {
     private final String hostname, database, username, password;
     private final int port;
 
-    public SqlDatabase(String hostname, String database, String username, String password, int port) {
+    public LibrarySqlDatabase(String hostname, String database, String username, String password, int port) {
         this.hostname = hostname;
         this.database = database;
         this.username = username;
@@ -33,7 +33,10 @@ public class SqlDatabase implements Database {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
         connection = DriverManager.getConnection(String.format("jdbc:mysql://%s:%d/%s", hostname, port, database), username, password);
-        loadTables();
+        if (loadTables())
+            System.out.println("Trying to create tables.");
+        else
+            System.out.println("Error when create all tables.");
 
         connection.createStatement().executeUpdate("CREATE SCHEMA IF NOT EXISTS `" + database + "` DEFAULT CHARACTER SET utf8 ;");
     }
@@ -42,7 +45,7 @@ public class SqlDatabase implements Database {
         AtomicBoolean finish = new AtomicBoolean(false);
 
         try {
-            for(BankSqlQueries queries : BankSqlQueries.values()) {
+            for(LibrarySqlQueries queries : LibrarySqlQueries.values()) {
                 executeUpdate(queries.toString());
             }
             finish.set(true);
@@ -93,16 +96,15 @@ public class SqlDatabase implements Database {
 
     @Override
     public void disconnect() throws Exception {
-        if(isConnected())
-            getConnection().close();
-    }
 
-    public Connection getConnection() {
-        return connection;
     }
 
     @Override
     public boolean isConnected() throws Exception {
-        return connection != null && !connection.isClosed();
+        return false;
+    }
+
+    public Connection getConnection() {
+        return connection;
     }
 }

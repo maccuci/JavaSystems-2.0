@@ -1,13 +1,13 @@
 package LibraryManagement;
 
 import LibraryManagement.backend.queries.LibrarySqlQueries;
-import LibraryManagement.backend.sql.SqlDatabase;
+import LibraryManagement.backend.sql.LibrarySqlDatabase;
 
 import java.util.Scanner;
 
 public class Main {
 
-    private static final SqlDatabase database = new SqlDatabase("localhost", LibrarySqlQueries.DATABASE.toString(), "root", "", 3306);
+    private static final LibrarySqlDatabase database = new LibrarySqlDatabase("localhost", LibrarySqlQueries.DATABASE.toString(), "root", "", 3306);
 
     public static void main(String[] args) {
         try {
