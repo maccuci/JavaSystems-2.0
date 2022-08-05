@@ -46,11 +46,15 @@ public class LibrarySqlDatabase implements Database {
 
         try {
             for(LibrarySqlQueries queries : LibrarySqlQueries.values()) {
-                executeUpdate(queries.toString());
+                String[] name = queries.toString().split("`");
+                if (queries.name().startsWith("TABLE")) {
+                    System.out.println("Trying to create the table " + name[1] + " to the mysql database.");
+                    executeUpdate(queries.toString());
+                }
             }
             finish.set(true);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("Impossible to insert the default values on the schema.");
         }
         return finish.get();
     }

@@ -43,7 +43,11 @@ public class BankSqlDatabase implements Database {
 
         try {
             for(BankSqlQueries queries : BankSqlQueries.values()) {
-                executeUpdate(queries.toString());
+                String[] name = queries.toString().split("`");
+                if (queries.name().startsWith("TABLE")) {
+                    System.out.println("Trying to create the table " + name[1] + " to the mysql database.");
+                    executeUpdate(queries.toString());
+                }
             }
             finish.set(true);
         } catch (Exception e) {

@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c91fec3c-91a3-45eb-beb8-f40a14f81bab" name="Changes" comment="modify files of OnlineBank project">
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/backend/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/backend/queries/LibrarySqlQueries.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/backend/sql/SqlDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/model/ModelBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/plano_do_projeto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LibraryManagement/util/StringUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineBank/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineBank/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineBank/account/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineBank/account/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineBank/account/CustomerAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineBank/account/CustomerAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineBank/backend/queries/CoreQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineBank/backend/queries/BankSqlQueries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OnlineBank/backend/sql/SqlDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/OnlineBank/backend/sql/SqlDatabase.java" afterDir="false" />
-    </list>
+    <list default="true" id="c91fec3c-91a3-45eb-beb8-f40a14f81bab" name="Changes" comment="modify files of OnlineBank project and starting at Library Management" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,7 +126,7 @@
       <workItem from="1658643760616" duration="3771000" />
       <workItem from="1658650882226" duration="9471000" />
       <workItem from="1659653145651" duration="1317000" />
-      <workItem from="1659671291744" duration="946000" />
+      <workItem from="1659671291744" duration="1337000" />
     </task>
     <task id="LOCAL-00001" summary="maven setup">
       <created>1658341714870</created>
@@ -261,7 +247,21 @@
       <option name="project" value="LOCAL" />
       <updated>1659653640642</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="modify files of OnlineBank project and starting at Library Management">
+      <created>1659672541022</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1659672541022</updated>
+    </task>
+    <task id="LOCAL-00019" summary="modify files of OnlineBank project and starting at Library Management">
+      <created>1659672642970</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1659672642970</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +293,8 @@
     <MESSAGE value="Starting OnlineBank project" />
     <MESSAGE value="modify files" />
     <MESSAGE value="modify files of OnlineBank project" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify files of OnlineBank project" />
+    <MESSAGE value="modify files of OnlineBank project and starting at Library Management" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify files of OnlineBank project and starting at Library Management" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
